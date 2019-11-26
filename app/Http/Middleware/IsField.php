@@ -20,6 +20,6 @@ class IsField
         if (auth()->user()->isField()) {
             return $next($request);
         }
-        return redirect('profile');
+        return redirect('profile')->withErrors(['Error: Please fill in your profile information']);
     }
 }

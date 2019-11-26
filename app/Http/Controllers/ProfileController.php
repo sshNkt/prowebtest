@@ -27,7 +27,7 @@ class ProfileController extends Controller
         'about' => 'required | max:255',
          ]);
         Profile::create($req->all());
-       
+
         $user = User::where('id', $req->user_id)->first();
         $user->profile = true;
         $user->save();
